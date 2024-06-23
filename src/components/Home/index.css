@@ -1,0 +1,24 @@
+
+.home-heading{
+    color: black;
+    font-family: "Roboto";
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.description{
+    color: rgb(14, 11, 11);
+}
+
+.explore-button{
+    color: white;
+    background-color: black;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.home-sub-container{
+    padding: 20px;
+}

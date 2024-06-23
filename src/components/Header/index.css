@@ -1,0 +1,55 @@
+.header-bg{
+    background-color: yellow;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+.logo-contianer{
+    display: flex;
+    align-items: center;
+}
+.book-store-name{
+    margin: 0px;
+    font-size: 17px;
+    font-weight: 400;
+    margin-left: 5px;
+}
+.logo{
+    border: 1px solid;
+    width: fit-content;
+    padding: 4px;
+}
+.nav-items-container{
+    list-style-type: none;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+}
+.icon{
+    margin-right: 5px;
+}
+.icon-container{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.icon-name{
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .icon-name{
+        display: inline;
+    }
+}
+
+.nav-link{
+    color: black;
+    text-decoration: none;
+}
