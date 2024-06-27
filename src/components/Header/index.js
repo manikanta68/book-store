@@ -1,3 +1,5 @@
+import { useContext} from "react";
+import { CartContext } from "../../App";
 import { Link } from "react-router-dom"
 import { FaBook, FaShoppingBag } from "react-icons/fa";
 
@@ -5,6 +7,7 @@ import { FaBook, FaShoppingBag } from "react-icons/fa";
 import "./index.css"
 
 const Header = () => {
+    const {cartArray} = useContext(CartContext)
     return (<header className="header-bg">
         <nav className="nav-bar">
             <Link to="/" className="nav-link">
@@ -25,6 +28,7 @@ const Header = () => {
                 <Link to="/cart" className="nav-link">
                     <li className="icon-container">
                         <FaShoppingBag className="icon" />
+                        <p className="cart-count">{cartArray.length}</p>
                         <span className="icon-name">Cart</span>
                     </li>
                 </Link>

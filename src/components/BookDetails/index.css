@@ -1,0 +1,84 @@
+.book-title{
+    font-size: 20px;
+    font-family: "Roboto";
+}
+.author{
+    font-style: italic;
+    margin-top: 2px;
+    color: rgb(241, 25, 17);
+}
+.sub-headings{
+    font-weight: bold;
+}
+.span{
+    font-weight: normal;
+}
+.details-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.figure-details{
+    margin: 0px;
+    margin-top: 10px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.figure-image{
+    height: 170px;
+    width: 170px;
+}
+
+.figure-captions{
+    margin: 0px;
+    width: 100%;
+    padding: 10px;
+}
+.product-description{
+    padding: 10px;
+}
+.add-button{
+    background-color: lightgreen;
+    border: none;
+    padding: 10px;
+    border-radius: 2px;
+    width: 100%;
+}
+.loading-container{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.failureViewContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+    padding: 10px;
+    height: 50vh;
+  }
+  .retryButton{
+    padding: 9px;
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  .failure-image{
+    height: 60px;
+    width: 60px;
+  }
+  .failure-text{
+    font-size: 13px;
+  }

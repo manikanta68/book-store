@@ -1,0 +1,27 @@
+.figure{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+
+}
+.figcaption{
+    margin: 0px;
+    text-align: center;
+}
+.fig{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.description{
+    text-align: center;
+    font-size: 13px;
+    margin-top: 4px;
+}
+.price{
+    margin-top: 1px;
+}
+.nav-link{
+    text-decoration: none;
+}
