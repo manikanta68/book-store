@@ -1,4 +1,4 @@
-import { useState,useContext } from "react"
+import { useState, useContext } from "react"
 import { Link } from "react-router-dom"
 import Header from "../Header"
 import { CartContext } from "../../App.js"
@@ -6,7 +6,7 @@ import CartSummary from "../CartSummary/index.js"
 import "./index.css"
 
 const Checkout = () => {
-  const {cartArray} = useContext(CartContext)
+  const { cartArray } = useContext(CartContext)
   const [name, setName] = useState("")
   const [nameError, setNameError] = useState("")
   const [address, setAddress] = useState("")
@@ -48,51 +48,45 @@ const Checkout = () => {
       setPhoneError("")
     }
 
-    if ((nameError === "" && name !== "") && (addressError === "" && address !== "") && (emailError === "" && email !== "") && (phoneError === "" && phone !== "")) {
-      console.log("OK")
+    if ((nameError === "" && name !== "") && (addressError === "" && address !== "") && (emailError === "" && email !== "") && (phoneError === "" && phone.length === 10)) {
       setPopup((prevState) => !prevState)
     }
   }
 
   const onChangeName = (event) => {
-    console.log(event.target.value)
     setName(event.target.value)
   }
 
   const onChangeAddress = (event) => {
-    console.log(event.target.value)
     setAddress(event.target.value)
   }
 
   const onChangeEmail = (event) => {
-    console.log(event.target.value)
     setEmail(event.target.value)
   }
 
   const onChangePhone = (event) => {
-    console.log(event.target.value)
     setPhone(event.target.value)
   }
 
   const onClickBack = () => {
     setPopup((prevState) => !prevState)
   }
-  console.log(cartArray.length)
-  if(cartArray.length === 0){
+  if (cartArray.length === 0) {
     return (
-        <div className="refuse-chekcout">
-              <Link to="/">
-                  <button className="refuse-button" type="button">Go to Home</button>
-              </Link>
-        </div>
-   )
-     
-  }else{
-    return ( <div>
+      <div className="refuse-chekcout">
+        <Link to="/">
+          <button className="refuse-button" type="button">Go to Home</button>
+        </Link>
+      </div>
+    )
+
+  } else {
+    return (<div>
       <Header />
       <div className="checkout-page-bg-container">
         <CartSummary />
-        <div className="Shipping-details">
+        <div className="shipping-details">
           <h3>Shipping Address</h3>
           <form onSubmit={onFormValidation}>
             <input onChange={onChangeName} value={name} placeholder="Name" className="input-field" type="text" />
@@ -106,17 +100,22 @@ const Checkout = () => {
             <button className="button-field" type="submit">Place Order</button>
           </form>
         </div>
-        {popup && <div className="popup-container">
-          <div className="tex-container">
-          <p>Confirmed !</p>
-          <p>Thanks for your order!</p>
+        {popup && <div className="popup-overlay">
+          <div className="popup">
+            <div className="popup-content">
+              <p>Confirmed !</p>
+              <p>Thanks for your order!</p>
+              <button onClick={onClickBack} className="back-button" >Done</button>
+            </div>
           </div>
-           <button onClick={onClickBack} className="back-button" >Done</button></div>}
+        </div>
+        }
+
       </div>
     </div>)
   }
 
-  
+
 }
 
 export default Checkout

@@ -12,9 +12,9 @@ const Cart = () => {
         <Header />
         <div className="cart-container">
             <h2>My Bag</h2>
-            <div>
+            <div className="cart-sub-container">
                 {cartArray.length === 0 ? <div className="empty-cart">
-                    <p>You Have No Items In Your Cart</p>
+                   <p>You Have No Items In Your Cart</p>
                     <Link to="/books">
                         <button className="continue-shopping-button">Continue Shopping</button>
                     </Link>
@@ -23,7 +23,7 @@ const Cart = () => {
                     <ul className="cart-ul-list">
                         {cartArray.map(((eachCartItem) => <CartItem key={eachCartItem.isbn13} itemDetails={eachCartItem} />))}
                     </ul>
-                    <CartSummary>{cartArray}</CartSummary> 
+                    <CartSummary className="cart-summary-box-container">{cartArray}</CartSummary> 
                   </div>
                 }
 

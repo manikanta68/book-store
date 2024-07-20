@@ -4,9 +4,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
+    width: 100%;
     padding: 6px;
     margin-bottom: 10px;
+}
+@media screen and  (min-width: 576px) {
+    .cart-list-item{
+        padding: 13px;
+    }
 }
 .cart-list-item-image{
     height: 90px;

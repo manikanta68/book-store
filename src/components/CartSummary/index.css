@@ -4,6 +4,11 @@
     padding: 10px;
     border-radius: 7px;
 }
+@media screen and (min-width: 576px) {
+    .summary-card{
+        width: 30%;
+    }
+}
 .summary-amount{
     display: flex;
     align-items: center;

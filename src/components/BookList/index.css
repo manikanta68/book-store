@@ -2,13 +2,21 @@
     display: flex;
     align-items: center;
     width: fit-content;
-    margin: 30px;
+    margin: 20px;
     border-style: solid;
     border-width: 1px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+.search-bar-container{
+  display: flex;
+  justify-content: flex-end;
+}
+.books-heading{
+  margin: 5px;
+  text-align: center;
 }
 .input{
     border: none;
@@ -28,6 +36,12 @@
 .ul-books-list{
     list-style-type: none;
     padding: 0px;
+}
+@media screen and (min-width: 576px) {
+  .ul-books-list{
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
 }
 .books-list-bg-container{
     height: 100vh;
@@ -65,5 +79,58 @@
   }
   .failure-text{
     font-size: 13px;
+  }
+  .books-sucess-view-top-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .books-container-sucess-view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+  @media screen and (min-width: 576px) {
+    .books-container-sucess-view{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    
+  }
+  .range-slider{
+    width: 90%;
+  }
+  .price-range-name{
+    margin: 0px;
+  }
+  @media screen and (min-width: 576px) {
+    .price-range-name{
+      margin: 20px;
+    }
+    
+  }
+  .rupe-icon{
+    font-size: 20px;
+  }
+  .price-container{
+    border-style: solid;
+    width: 220px;
+    border-radius: 8px;
+    border-width: 1px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+  @media screen and (min-width: 576px) {
+    .price-container{
+      height: 120px;
+    }
+  }
+  .books-list-sucess-container{
+    width: 80%;
   }
   

@@ -28,9 +28,21 @@
     align-items: center;
     padding: 20px;
 }
+@media screen and (min-width: 576px) {
+    .figure-details{
+        flex-direction: row;
+        align-self: flex-start;
+    }
+}
 .figure-image{
     height: 170px;
     width: 170px;
+}
+@media screen and (min-width:576px) {
+    .figure-image{
+        height: 350px;
+        width: 300px
+    }
 }
 
 .figure-captions{
@@ -41,12 +53,23 @@
 .product-description{
     padding: 10px;
 }
+@media screen and (min-width:576px) {
+    .product-description{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
 .add-button{
     background-color: lightgreen;
     border: none;
     padding: 10px;
     border-radius: 2px;
     width: 100%;
+}
+@media screen and (min-width:576px) {
+    .add-button{
+        width: 50%;
+    }
 }
 .loading-container{
     height: 60vh;
