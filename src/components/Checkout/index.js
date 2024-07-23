@@ -22,13 +22,14 @@ const Checkout = () => {
 
   const onFormValidation = (event) => {
     event.preventDefault()
-
-    if (name === "") {
+    const nameCheck =  [...name].every((char) => (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z'))
+    const addressCheck = [...address].every((char) => (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z'))
+    if (name === "" || name.length < 3 || !nameCheck) {
       setNameError("Please Enter Name")
     } else {
       setNameError("")
     }
-    if (address === "") {
+    if (address === "" || address.length < 3 || !addressCheck) {
       setAddressError("Please Enter Address")
     } else {
       setAddressError("")
@@ -48,7 +49,7 @@ const Checkout = () => {
       setPhoneError("")
     }
 
-    if ((nameError === "" && name !== "") && (addressError === "" && address !== "") && (emailError === "" && email !== "") && (phoneError === "" && phone.length === 10)) {
+    if ((nameError === "" && name.trim() !== "" && name.trim().length > 3) && (addressError === "" && address !== "" && name.trim().length > 3) && (emailError === "" && email !== "") && (phoneError === "" && phone.length === 10)) {
       setPopup((prevState) => !prevState)
     }
   }
