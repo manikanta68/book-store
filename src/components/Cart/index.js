@@ -11,6 +11,7 @@ const Cart = () => {
     return <div>
         <Header />
         <div className="cart-container">
+        
             <h2>My Bag</h2>
             <div className="cart-sub-container">
                 {cartArray.length === 0 ? <div className="empty-cart">

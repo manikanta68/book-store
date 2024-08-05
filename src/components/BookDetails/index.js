@@ -1,10 +1,10 @@
 import { useEffect, useState, useContext } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { ThreeDots } from 'react-loader-spinner'
 import { CartContext } from "../../App.js"
 import Header from "../Header/index.js"
 import "./index.css"
-import { LiaOilCanSolid } from "react-icons/lia"
+
 
 const apiStatusConstants = {
     initial: "INITIAL",
@@ -20,6 +20,7 @@ const BookDetails = () => {
         errorMsg: null
     })
     const [buttonClick, setButtonClick] = useState(false)
+    const [add , setAdd] = useState(false)
     const { cartArray, setCartArray } = useContext(CartContext)
     const params = useParams()
     const { id } = params
@@ -42,11 +43,13 @@ const BookDetails = () => {
     }, [buttonClick])
 
     const onClickAdd = () => {
+        setAdd(true)
         const { data } = apiResponse
         const isItemFind = cartArray.find(item => item.isbn13 === data.isbn13)
         if (isItemFind === undefined) {
             setCartArray((preavState) => [...preavState, data])
         }
+        
 
     }
 
@@ -63,6 +66,7 @@ const BookDetails = () => {
     const renderSuccessView = () => {
         const { data } = apiResponse
         return <div className="details-container">
+            <div className="figer-container">
             <figure className="figure-details">
                 <img src={data.image} alt={data.title} className="figure-image" />
                 <figcaption className="figure-captions">
@@ -73,9 +77,16 @@ const BookDetails = () => {
                     <p className="sub-headings" >Publish Year: <span className="span">{data.year} </span></p>
                     <p className="sub-headings">Publisher: <span className="span">{data.publisher} </span></p>
                     <p className="sub-headings">Price: <span className="span"> ${data.price}.00 </span></p>
-                    <button onClick={onClickAdd} className="add-button">Added</button>
+                    <button type="button" onClick={onClickAdd} className="add-button"> {add ? "Book added" : "Add To Cart"} </button>
+                    {add && 
+                    <Link to="/cart" className="nav-link">
+                       <button type="button" className="go-to-cart">Go to Cart</button>
+                    </Link>}
+                    
+                    
                 </figcaption>
             </figure>
+            </div>
             <div className="product-description">
                 <hr />
                 <h2>Product Description</h2>

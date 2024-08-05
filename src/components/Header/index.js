@@ -21,7 +21,7 @@ const Header = () => {
                 <Link to="/books" className="nav-link">
                     <li className="icon-container">
                         <FaBook className="icon" />
-                        <span className="icon-name">Book List</span>
+                        <span className="icon-name">Books List</span>
                     </li>
                 </Link>
 
